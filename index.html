@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#10182d">
+  <title>VECTOR ZERO</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div id="game">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">V</span>
+        <div>
+          <h1>VECTOR ZERO</h1>
+          <p>ARENA SURVIVAL</p>
+        </div>
+      </div>
+      <div class="stats">
+        <div class="stat">
+          <span>생존 시간</span>
+          <strong id="timer">00:00</strong>
+        </div>
+        <div class="stat">
+          <span>처치</span>
+          <strong id="kills">0</strong>
+        </div>
+        <div class="stat">
+          <span>레벨</span>
+          <strong id="level">1</strong>
+        </div>
+      </div>
+    </header>
+
+    <div id="arena"></div>
+
+    <section class="health-panel">
+      <div class="health-label">
+        <span>PLAYER ENERGY</span>
+        <span id="healthText">100 / 100</span>
+      </div>
+      <div class="bar">
+        <div id="healthBar" class="health-fill"></div>
+      </div>
+      <div class="xp-label">
+        <span>EXPERIENCE</span>
+        <span id="xpText">0 / 5</span>
+      </div>
+      <div class="bar xp-bar">
+        <div id="xpBar" class="xp-fill"></div>
+      </div>
+    </section>
+
+    <div class="controls">
+      <span>WASD / 방향키 이동</span>
+      <span>SPACE 대시</span>
+      <span>P 일시정지</span>
+    </div>
+
+    <div id="overlay" class="overlay">
+      <div class="modal">
+        <div class="eyebrow">A NEW ARENA EXPERIENCE</div>
+        <h2>VECTOR <span>ZERO</span></h2>
+        <p>끝없이 몰려오는 적들 사이에서 살아남아라.</p>
+        <div class="character-preview">✦</div>
+        <button id="startButton">게임 시작</button>
+        <small>WASD 또는 방향키로 이동</small>
+      </div>
+    </div>
+
+    <div id="levelOverlay" class="overlay hidden">
+      <div class="modal">
+        <div class="eyebrow">LEVEL UP</div>
+        <h2>능력을 선택하라!</h2>
+        <div id="upgradeChoices"></div>
+        <small>키보드 숫자 1 / 2 / 3 선택</small>
+      </div>
+    </div>
+
+    <div id="pauseOverlay" class="overlay hidden">
+      <div class="modal">
+        <div class="eyebrow">PAUSED</div>
+        <h2>잠시 멈춤</h2>
+        <p>P 키를 눌러 계속하기</p>
+      </div>
+    </div>
+
+    <div id="gameOverOverlay" class="overlay hidden">
+      <div class="modal">
+        <div class="eyebrow">RUN COMPLETE</div>
+        <h2>게임 종료</h2>
+        <p id="finalStats"></p>
+        <button id="restartButton">다시 도전하기</button>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
